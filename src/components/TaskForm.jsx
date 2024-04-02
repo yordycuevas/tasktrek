@@ -25,7 +25,7 @@ const TaskForm = () => {
       setTaskData((prevData) => {
         return {
           ...prevData,
-          tags: [...prevData.tags, tag]
+          tags: [...prevData.tags, tag],
         };
       });
     }
