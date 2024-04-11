@@ -69,6 +69,7 @@ const TaskForm = ({setTasks}) => {
         <input
           type="text"
           name="task"
+          value={taskData.task}
           className="task_input"
           placeholder="Add a task..."
           onChange={handleChange}
@@ -100,6 +101,7 @@ const TaskForm = ({setTasks}) => {
           <div>
             <select
               name="status"
+              value={taskData.status}
               className="task_status"
               onChange={handleChange}
             >

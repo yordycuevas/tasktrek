@@ -3,7 +3,7 @@ import Tag from "./Tag";
 import PropTypes from 'prop-types';
 import delectIcon from "../assets/delete.svg";
 
-const TaskCard = ({title, tags}) => {
+const TaskCard = ({title, tags, handleDelete, index}) => {
   return (
     <article className="task_card">
       <p className="task_text">{title}</p>
@@ -15,7 +15,7 @@ const TaskCard = ({title, tags}) => {
             ))
           }
         </div>
-        <div className="task_delete">
+        <div className="task_delete" onClick={()=> handleDelete(index) } >
           <img src={delectIcon} className="delete_icon" alt="Delete icon" />
         </div>
       </div>
@@ -26,6 +26,8 @@ const TaskCard = ({title, tags}) => {
 TaskCard.propTypes = {
   title: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default TaskCard;
