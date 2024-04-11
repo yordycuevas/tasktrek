@@ -8,6 +8,7 @@ import inProgressIcon from './assets/glowing-star.png';
 import doneIcon from './assets/check-mark-button.png';
 
 const App = () => {
+  
 
   const [tasks, setTasks] = useState([]);
   console.log("tasks",tasks);

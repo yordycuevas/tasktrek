@@ -3,7 +3,8 @@ import { useState } from "react";
 import "./TaskForm.css";
 import Tag from "./Tag";
 
-const TaskForm = () => {
+// eslint-disable-next-line react/prop-types
+const TaskForm = ({setTasks}) => {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "todo",
@@ -49,6 +50,17 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(taskData);
+    setTasks (prev => {
+      return [...prev, taskData]
+    
+    })
+    setTaskData(
+      {
+        task: "",
+        status: "todo",
+        tags: [],
+      }
+    )
   };
 
   return (
